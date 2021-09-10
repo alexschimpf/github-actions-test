@@ -1,0 +1,20 @@
+name: Update version
+
+on:
+  pull_request:
+
+jobs:
+  update-version:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.head_ref }}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+    - name: Increment version
+      run: python update_version.py
+    - uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Upped version
