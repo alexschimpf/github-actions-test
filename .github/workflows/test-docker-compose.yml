@@ -1,0 +1,19 @@
+name: Test docker-compose
+
+on:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+      - name: Install requirements
+        run: pip install requests
+      - name: Build docker-compose
+        run: docker-compose up -d
+      - name: Run test
+        run: python test.py

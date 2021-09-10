@@ -1,0 +1,6 @@
+version: '3'
+services:
+    mock-server:
+        image: mockserver/mockserver:mockserver-5.11.2
+        ports:
+            - 1080:1080
