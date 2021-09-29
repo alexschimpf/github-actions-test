@@ -20,5 +20,5 @@ while time.time() - start_time < MAX_TIMEOUT:
     print('Sleeping...')
     time.sleep(5)
 
-print('Failure!')
+print('Failure!!')
 sys.exit(1)
