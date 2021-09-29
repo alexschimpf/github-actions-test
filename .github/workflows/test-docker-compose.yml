@@ -2,7 +2,6 @@ name: Test docker-compose
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened]
     paths:
       - 'test.py'
 
