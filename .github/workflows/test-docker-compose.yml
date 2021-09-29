@@ -1,7 +1,10 @@
 name: Test docker-compose
 
 on:
-  pull_request:
+  push:
+    branches-ignore:
+      - 'main'
+      - 'release-**'
     paths:
       - 'test.py'
 
